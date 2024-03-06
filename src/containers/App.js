@@ -4,18 +4,36 @@ import Scroll from "../components/Scroll";
 import SearchBox from "../components/SearchBox";
 import './App.css';
 import spinner from './spinner.svg'
+import { connect } from "react-redux";
+import { setSearchFeild } from "../actions";
+
+
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchRobots.searchField
+    }
+} 
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSearchField: (event) => dispatch(setSearchFeild(event.target.value))
+    }
+}
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
-            'robots': [],
-            'searchField': ''
+            robots: [],
+            searchField: ''
         }
 
     }
 
+
+
     componentDidMount() {
+        console.log(this.props.store.getState())
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(users => {
@@ -54,4 +72,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App); 
