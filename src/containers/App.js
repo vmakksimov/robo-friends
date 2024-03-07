@@ -8,11 +8,11 @@ import { connect } from "react-redux";
 import { setSearchFeild } from "../actions";
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        searchField: state.searchRobots.searchField
+        searchField: state.searchField
     }
-} 
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -24,8 +24,8 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            robots: [],
-            searchField: ''
+            robots: []
+
         }
 
     }
@@ -33,7 +33,7 @@ class App extends Component {
 
 
     componentDidMount() {
-        console.log(this.props.store.getState())
+        // console.log(this.props.store.getState())
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(users => {
@@ -42,13 +42,14 @@ class App extends Component {
             .catch(error => console.log(error))
     }
 
-    onSearchField = (ev) => {
-        let currentRobot = ev.target.value
-        this.setState({ searchField: currentRobot })
-    }
+    // onSearchField = (ev) => {
+    //     let currentRobot = ev.target.value
+    //     this.setState({ searchField: currentRobot })
+    // }
 
     render() {
-        const { robots, searchField } = this.state;
+        const { robots } = this.state;
+        const { searchField, onSearchField } = this.props;
         const filteredRobot = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase())
         })
@@ -62,7 +63,7 @@ class App extends Component {
             :
             <div className="tc">
                 <h1 className="f1">Robots App</h1>
-                <SearchBox searchField={this.onSearchField} />
+                <SearchBox searchField={onSearchField} />
                 <Scroll>
                     <CardList robots={filteredRobot} />
                 </Scroll>
