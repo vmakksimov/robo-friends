@@ -5,41 +5,46 @@ import SearchBox from "../components/SearchBox";
 import './App.css';
 import spinner from './spinner.svg'
 import { connect } from "react-redux";
-import { setSearchFeild } from "../actions";
+import { setSearchFeild, requestRobots   } from "../actions";
 
 
 const mapStateToProps = (state) => {
     return {
-        searchField: state.searchField
+        searchField: state.searchRobots.searchField,
+        robots: state.requestRobots.robots,
+        isPending: state.requestRobots.isPending,
+        error: state.requestRobots.error
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        onRequestRobots: () => dispatch(requestRobots()),  
         onSearchField: (event) => dispatch(setSearchFeild(event.target.value))
     }
 }
 
 class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            robots: []
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //         robots: []
 
-        }
+    //     }
 
-    }
+    // }
 
 
 
     componentDidMount() {
+        this.props.onRequestRobots();
         // console.log(this.props.store.getState())
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(users => {
-                this.setState({ 'robots': users })
-            })
-            .catch(error => console.log(error))
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(res => res.json())
+        //     .then(users => {
+        //         this.setState({ 'robots': users })
+        //     })
+        //     .catch(error => console.log(error))
     }
 
     // onSearchField = (ev) => {
@@ -48,13 +53,14 @@ class App extends Component {
     // }
 
     render() {
-        const { robots } = this.state;
-        const { searchField, onSearchField } = this.props;
+        const { searchField, onSearchField, robots, isPending } = this.props;
+        console.log(this.props)
+        console.log(searchField)
         const filteredRobot = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase())
         })
 
-        return !robots.length
+        return isPending
 
             ? <div className="spinner">
                 <h1>Loading</h1>
