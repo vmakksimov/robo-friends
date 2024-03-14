@@ -10,6 +10,7 @@ import 'tachyons'
 import App from './containers/App';
 import { searchRobots, requestRobots } from './reducers';
 import { createLogger } from 'redux-logger';
+import * as registerServiceWorker from './registerServiceWorker.js';
 
 
 const logger = createLogger();
@@ -18,7 +19,7 @@ const rootReducer = combineReducers({
   requestRobots
 })
 const store =
-  createStore(rootReducer, applyMiddleware(thunk, logger))
+  createStore(rootReducer, applyMiddleware(thunk))
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,3 +36,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+registerServiceWorker.register();

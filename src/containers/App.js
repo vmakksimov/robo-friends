@@ -6,6 +6,7 @@ import './App.css';
 import spinner from './spinner.svg'
 import { connect } from "react-redux";
 import { setSearchFeild, requestRobots   } from "../actions";
+import Header from "../components/Header";
 
 
 const mapStateToProps = (state) => {
@@ -54,8 +55,6 @@ class App extends Component {
 
     render() {
         const { searchField, onSearchField, robots, isPending } = this.props;
-        console.log(this.props)
-        console.log(searchField)
         const filteredRobot = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchField.toLowerCase())
         })
@@ -68,7 +67,7 @@ class App extends Component {
             </div>
             :
             <div className="tc">
-                <h1 className="f1">Robots App</h1>
+                <Header/>
                 <SearchBox searchField={onSearchField} />
                 <Scroll>
                     <CardList robots={filteredRobot} />
