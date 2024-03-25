@@ -33,7 +33,7 @@
 ],
   "description": "Compress and compare images with different codecs right in your browser.",
 
-  "start_url": "./",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
