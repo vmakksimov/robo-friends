@@ -40,7 +40,7 @@
 ],
   "description": "Compress and compare images with different codecs right in your browser.",
 
-  "start_url": "./index.html",
+  "start_url": "/",
   "id": "/robo-friends/",
   "display": "standalone",
   "theme_color": "#000000",
