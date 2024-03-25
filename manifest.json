@@ -18,7 +18,7 @@
       "src": "/android-chrome-384x384.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
@@ -33,7 +33,7 @@
 ],
   "description": "Compress and compare images with different codecs right in your browser.",
 
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
