@@ -15,7 +15,7 @@
       "purpose": "any"
     },
     {
-      "src": "./android-chrome-384x384.png",
+      "src": "./Icon_Pinguin_1_512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
