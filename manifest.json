@@ -25,10 +25,18 @@
     {
      "src": "./android-chrome-384x384.png",
       "sizes": "384x384",
-      "type": "image/png",
+       "type": "image/png",
       "label": "Red robot",
       "purpose": "any"
-    }
+   },
+   {
+    "src": "./apple-touch.icon.png",
+     "sizes": "384x384",
+      "type": "image/png",
+      "form_factor": "wide",
+     "label": "Red robot",
+     "purpose": "any"
+  }
 ],
   "description": "Compress and compare images with different codecs right in your browser.",
 
