@@ -3,16 +3,14 @@
   "name": "Create React App PWA",
   "icons": [
     {
-      "src": "./favicon.ico",
+      "src": "./favicon-32x32.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon",
-      "purpose": "any"
+      "type": "image/x-icon"
     },
     {
       "src": "./android-chrome-192x192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any"
+      "sizes": "192x192"
     },
     {
       "src": "./Icon_Pinguin_1_512x512.png",
@@ -26,22 +24,19 @@
      "src": "./android-chrome-384x384.png",
       "sizes": "384x384",
        "type": "image/png",
-      "label": "Red robot",
-      "purpose": "any"
+      "label": "Red robot"
    },
    {
     "src": "./android-chrome-384x384.png",
      "sizes": "384x384",
       "type": "image/png",
       "form_factor": "wide",
-     "label": "Red robot",
-     "purpose": "any"
+     "label": "Red robot"
   }
 ],
   "description": "Compress and compare images with different codecs right in your browser.",
 
-  "start_url": "/",
-  "id": "/robo-friends/",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
