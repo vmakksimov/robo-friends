@@ -18,10 +18,7 @@ const rootReducer = combineReducers({
   searchRobots,
   requestRobots
 })
-const store =
-  createStore(rootReducer, applyMiddleware(thunk))
-
-
+const store = createStore(rootReducer, applyMiddleware(thunk))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
