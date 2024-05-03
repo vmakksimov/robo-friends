@@ -3,10 +3,10 @@ import CounterButton from "./CounterButton";
 import React from "react";
 
 
-// it('counter button test', () => {
-//     const mockColor = 'red'
-//     expect(shallow(<CounterButton color={mockColor}/>)).toMatchSnapshot();
-// })
+it('counter button test', () => {
+    const mockColor = 'red'
+    expect(shallow(<CounterButton color={mockColor}/>)).toMatchSnapshot();
+})
 
 // it('correctly icrements counter', () => {
 //     const mockColor = 'red'
