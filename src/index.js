@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider, connect } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { Provider} from 'react-redux';
+// import { configureStore } from '@reduxjs/toolkit';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { thunk } from 'redux-thunk';
 import './index.css';
@@ -9,11 +9,11 @@ import reportWebVitals from './reportWebVitals';
 import 'tachyons'
 import App from './containers/App';
 import { searchRobots, requestRobots } from './reducers';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import * as registerServiceWorker from './registerServiceWorker.js';
 
 
-const logger = createLogger();
+// const logger = createLogger();
 const rootReducer = combineReducers({
   searchRobots,
   requestRobots

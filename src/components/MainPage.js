@@ -28,7 +28,7 @@ class MainPage extends Component {
         })
     }
         render() {
-            const { onSearchField, isPending, robots} = this.props;
+            const { onSearchField, isPending} = this.props;
             return isPending
 
                 ? <div className="spinner">
